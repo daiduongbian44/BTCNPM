@@ -1,0 +1,17 @@
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\bin\Release\TestMvvmBinding.exe
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\bin\Release\TestMvvmBinding.pdb
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\Resources\IconsResourceDictionary.baml
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\Resources\ImplicitStylesResourceDictionary.baml
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\Resources\StylesResourceDictionary.baml
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\App.baml
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\Views\MainWindow.g.cs
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\App.g.cs
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\TestMvvmBinding_MarkupCompile.cache
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\TestMvvmBinding_MarkupCompile.lref
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\Views\MainWindow.baml
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\TestMvvmBinding.g.resources
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\TestMvvmBinding.Properties.Resources.resources
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\TestMvvmBinding.csproj.GenerateResource.Cache
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\TestMvvmBinding.exe
+C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\TestMvvmBinding\obj\x86\Release\TestMvvmBinding.pdb
