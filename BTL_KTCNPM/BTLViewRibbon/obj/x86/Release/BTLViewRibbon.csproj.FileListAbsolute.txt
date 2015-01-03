@@ -78,5 +78,5 @@ C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\bin\Release\Micros
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\bin\Release\System.Windows.Interactivity.dll
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\bin\Release\Microsoft.Expression.Interactions.xml
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\bin\Release\System.Windows.Interactivity.xml
-C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Release\Views\MainWindow.g.cs
-C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Release\Views\MainWindow.baml
+C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Release\Views\MainWindowView.g.cs
+C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Release\Views\MainWindowView.baml
