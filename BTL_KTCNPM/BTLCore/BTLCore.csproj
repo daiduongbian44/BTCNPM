@@ -44,10 +44,12 @@
     <Compile Include="Entities\PlanDetailEntity.cs" />
     <Compile Include="Entities\TechniqueEntity.cs" />
     <Compile Include="Entities\TERelationshipEntity.cs" />
+    <Compile Include="Formulars\Plan.cs" />
     <Compile Include="Function\LinearFunction.cs" />
     <Compile Include="Interfaces\IFunction.cs" />
     <Compile Include="Managers\ErrorManager.cs" />
     <Compile Include="Managers\TechniqueManager.cs" />
+    <Compile Include="Managers\TERelationshipManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
