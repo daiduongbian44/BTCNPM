@@ -11,6 +11,16 @@ namespace BTLCore.Entities {
         private double _piFactor;
         private string _name;
 
+        private static int Counter = 1;
+
+        public int STT { get; set; }
+
+        public ErrorEntity()
+        {
+            STT = Counter;
+            Counter++;
+        }
+
         public string Name
         {
             get { return _name; }

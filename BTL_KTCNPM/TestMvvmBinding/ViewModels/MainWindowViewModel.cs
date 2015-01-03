@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using TestMvvmBinding.Helpers;
 using TestMvvmBinding.Models;
+using System.Windows;
 
 namespace TestMvvmBinding.ViewModels
 {
@@ -54,13 +55,41 @@ namespace TestMvvmBinding.ViewModels
         public ICommand RefreshPersonsCommand { get { return new DelegateCommand(OnRefreshPersons); } }
         public ICommand DoNothingCommand { get { return new DelegateCommand(OnDoNothing, CanExecuteDoNothing); } }
 
+        public ICommand ParammeterCommand { get; set; }
+       
         #endregion
 
         #region Ctor
         public MainWindowViewModel()
         {
             RandomizeData();
+            ParammeterCommand = new TestCommand();
         }
+
+        class TestCommand : ICommand
+        {
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+            public void Execute(object parameter)
+            {
+                Person person = parameter as Person;
+                if (person != null)
+                {
+                    MessageBox.Show(person.Name);
+                }
+                else
+                {
+                    MessageBox.Show("Null");
+                }
+            }
+        }
+
         #endregion
 
         #region Command Handlers

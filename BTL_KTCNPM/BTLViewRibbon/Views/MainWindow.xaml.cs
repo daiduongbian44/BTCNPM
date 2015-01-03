@@ -18,7 +18,7 @@ using BTLViewRibbon.Cultures;
 using System.Globalization;
 using System.Diagnostics;
 
-namespace BTLViewRibbon
+namespace BTLViewRibbon.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
