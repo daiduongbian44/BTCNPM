@@ -7,8 +7,8 @@
                      xmlns:viewModel="clr-namespace:BTLViewRibbon.ViewModels"
                      x:Name="Window"
                      Title="ErrorManagerView"
-                     Width="640"
-                     Height="480">
+                     Width="750"
+                     Height="580">
 
     <ribbon:RibbonWindow.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
@@ -113,12 +113,14 @@
                             Margin="6,180,0,0"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
+                            Command="{Binding UpdateButtonCommand}"
                             Content="Update" />
                     <Button Width="75" 
                             Height="23"
                             Margin="87,180,0,0"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
+                            Command="{Binding CancelCommand}"
                             Content="Cancel" />
                 </Grid>
             </GroupBox>
@@ -246,7 +248,8 @@
                 <DataGrid Name="dataGridError" 
                           AutoGenerateColumns="False"
                           IsReadOnly="True"
-                          ItemsSource="{Binding ListErrors}">
+                          ItemsSource="{Binding ListErrors}"
+                          Background="White">
                     <DataGrid.Columns>
                         <DataGridTextColumn Width="50" 
                                             Binding="{Binding STT}"

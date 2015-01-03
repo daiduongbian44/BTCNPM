@@ -291,11 +291,58 @@ namespace BTLViewRibbon.ViewModels
         #region UpdateButtonCommand
         public bool CanUpdateButtonCommand()
         {
-            return IsReceiveCommand;
+            return !IsReceiveCommand;
         }
         public void ExeUpdateButtonCommand()
         {
-            
+            if (String.IsNullOrEmpty(TextNewName)
+                || String.IsNullOrEmpty(TextNewVf)
+                || String.IsNullOrEmpty(TextNewCf)
+                || String.IsNullOrEmpty(TextNewPi))
+            {
+                MessageBox.Show("Không được để trống các trường cần nhập!", "Thông báo",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // check name
+            var item = ListErrors.Where(p => p.Name.ToLower().
+                Equals(TextNewName.Trim().ToLower()) && !
+                p.Name.ToLower().Equals(ErrorEntitySelected.Name.ToLower())).ToList();
+
+            if (item.Count > 0)
+            {
+                MessageBox.Show("Tên đã được sử dụng, vui lòng dùng tên khác!", "Thông báo",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // casting type
+            double vf, cf, pi;
+            try
+            {
+                vf = double.Parse(TextNewVf);
+                cf = double.Parse(TextNewCf);
+                pi = double.Parse(TextNewPi);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xảy ra lỗi dữ liệu với các trường số liệu!", "Thông báo",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            ErrorEntity entity = ErrorEntitySelected;
+            entity.Name = TextNewName.Trim();
+            entity.VfFactor = vf;
+            entity.CfFactor = cf;
+            entity.PiFactor = pi;
+
+            //ListErrors.Add(entity);
+
+            IsGridBoxUpdateEnable = false;
+            IsGridBoxEnable = true;
+            IsReceiveCommand = true;
         }
         #endregion
 
@@ -321,6 +368,9 @@ namespace BTLViewRibbon.ViewModels
         public void ExeCancelCommand()
         {
             IsReceiveCommand = true;
+            IsGridBoxNewEnable = false;
+            IsGridBoxEnable = true;
+            IsGridBoxUpdateEnable = false;
         }
         #endregion
 
@@ -356,6 +406,10 @@ namespace BTLViewRibbon.ViewModels
                     TextNewVf = ErrorEntitySelected.VfFactor.ToString();
                     TextNewPi = ErrorEntitySelected.PiFactor.ToString();
                 }
+            }
+            else
+            {
+                ErrorEntitySelected = null;
             }
         }
 
