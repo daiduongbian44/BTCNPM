@@ -14,6 +14,11 @@ namespace BTLCore.Function {
         public double BFactor { get; set; }
         public double MFactor { get; set; }
 
+        public string Name
+        {
+            get { return GetName(); }
+        }
+
         public LinearFunction(double mF)
             : this(mF, 1) {
         }
@@ -25,6 +30,11 @@ namespace BTLCore.Function {
 
         public double GetValue(double variable) {
             return MFactor * variable + BFactor;
+        }
+
+        public string GetName()
+        {
+            return "Linear function";
         }
     }
 }

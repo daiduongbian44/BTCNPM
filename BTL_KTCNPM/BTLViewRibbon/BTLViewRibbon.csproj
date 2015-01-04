@@ -90,7 +90,9 @@
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ErrorManagerViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\PlanDetailCreateViewModel.cs" />
+    <Compile Include="ViewModels\TechniqueManagerViewModel.cs" />
     <Compile Include="Views\ErrorManagerView.xaml.cs">
       <DependentUpon>ErrorManagerView.xaml</DependentUpon>
     </Compile>

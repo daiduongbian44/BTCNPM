@@ -11,27 +11,36 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace BTLViewRibbon.UserControls
 {
     /// <summary>
     /// Interaction logic for SliderTextBoxCustom.xaml
     /// </summary>
-    public partial class SliderTextBoxCustom : UserControl
+    public partial class SliderTextBoxCustom : UserControl, INotifyPropertyChanged
     {
         private bool changeValueTextSlider = true;
 
-        /// <summary>
-        /// Return value of slider
-        /// </summary>
-        public double ValuesSlider
+        #region ValueSlider
+        public double ValueSlider
         {
-            get
+            get { return (double)GetValue(ValueSliderProperty); }
+            set
             {
-                return this.slider.Value;
+                SetValue(ValueSliderProperty, value);
+                NotifyPropertyChanged("ValueSlider");
             }
         }
-
+        public static readonly DependencyProperty ValueSliderProperty =
+                        DependencyProperty.Register("ValueSlider",
+                               typeof(double),
+                               typeof(SliderTextBoxCustom),
+                               new FrameworkPropertyMetadata(0.0), new ValidateValueCallback(t =>
+                               {
+                                   return true;
+                               }));
+        #endregion
 
         public SliderTextBoxCustom()
         {
@@ -82,6 +91,16 @@ namespace BTLViewRibbon.UserControls
                 this.textBox.Text = this.slider.Value.ToString();
             }
             changeValueTextSlider = true;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this,
+                    new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

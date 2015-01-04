@@ -3,17 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="uc"
              d:DesignHeight="25"
              d:DesignWidth="200"
-             mc:Ignorable="d">
+             mc:Ignorable="d"
+             >
     <Grid>
         <Slider Name="slider" 
                 Height="23"
                 Margin="0,0,35,0"
+                IsSnapToTickEnabled="True"
                 Maximum="100"
                 Minimum="0"
                 TickFrequency="5"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" />
+                TickPlacement="BottomRight"
+                Value="{Binding ElementName=uc,
+                                Path=ValueSlider,
+                                Mode=TwoWay,
+                                UpdateSourceTrigger=PropertyChanged}" />
         <TextBox Name="textBox" 
                  Width="32"
                  Height="23"

@@ -10,6 +10,8 @@ namespace BTLCore.Entities {
         private double _cfFactor;
         private double _piFactor;
         private string _name;
+        private int _count;
+        private double _percentError;
 
         private static int Counter = 1;
 
@@ -19,6 +21,7 @@ namespace BTLCore.Entities {
         {
             STT = Counter;
             Counter++;
+            PercentError = 10;
         }
 
         public string Name
@@ -31,6 +34,25 @@ namespace BTLCore.Entities {
             }
         }
 
+        public int Count
+        {
+            get {  return _count; }
+            set
+            {
+                _count = value;
+                NotifyPropertyChanged("Count");
+            }
+        }
+
+        public double PercentError
+        {
+            get { return _percentError; }
+            set
+            {
+                _percentError = value;
+                NotifyPropertyChanged("PercentError");
+            }
+        }
 
         public double VfFactor
         {
@@ -41,6 +63,7 @@ namespace BTLCore.Entities {
                 NotifyPropertyChanged("VfFactor");
             }
         }
+
         public double CfFactor {
             get { return _cfFactor; }
             set
@@ -49,6 +72,7 @@ namespace BTLCore.Entities {
                 NotifyPropertyChanged("CfFactor");
             }
         }
+
         public double PiFactor {
             get { return _piFactor; }
             set

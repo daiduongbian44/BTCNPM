@@ -8,7 +8,8 @@
                      x:Name="Window"
                      Title="ErrorManagerView"
                      Width="750"
-                     Height="580">
+                     Height="580"
+                     FontSize="13">
 
     <ribbon:RibbonWindow.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
@@ -34,7 +35,6 @@
                 <ribbon:RibbonGroup Header="Manager">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
                         <ribbon:RibbonGroupSizeDefinition>
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />

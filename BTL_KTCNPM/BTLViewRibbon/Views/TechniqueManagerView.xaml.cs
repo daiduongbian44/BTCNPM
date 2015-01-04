@@ -10,17 +10,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Windows.Controls.Ribbon;
 
 namespace BTLViewRibbon.Views
 {
     /// <summary>
     /// Interaction logic for TechniqueManagerView.xaml
     /// </summary>
-    public partial class TechniqueManagerView : Window
+    public partial class TechniqueManagerView : RibbonWindow
     {
         public TechniqueManagerView()
         {
             InitializeComponent();
+
+            // Insert code required on object creation below this point.
         }
     }
 }

@@ -47,6 +47,8 @@ namespace TestMvvmBinding.ViewModels
 
         #endregion
 
+        public int ValueSlider { get; set; }
+
         #endregion
 
         #region Commands
@@ -96,7 +98,8 @@ namespace TestMvvmBinding.ViewModels
 
         private void OnRefreshDate()
         {
-            MyDateTime = DateTime.Now;
+            MyDateTime = DateTime.Now; 
+            MessageBox.Show(ValueSlider.ToString());
         }
 
         private void OnRefreshPersons()

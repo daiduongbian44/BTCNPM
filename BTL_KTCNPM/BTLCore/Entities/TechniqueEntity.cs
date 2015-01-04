@@ -9,6 +9,16 @@ namespace BTLCore.Entities {
         private double _uFactor;
         private string _name;
 
+        private static int _counter = 1;
+
+        public int STT { get; set; }
+
+        public TechniqueEntity()
+        {
+            STT = _counter;
+            _counter++;
+        }
+
         public string Name
         {
             get { return _name; }

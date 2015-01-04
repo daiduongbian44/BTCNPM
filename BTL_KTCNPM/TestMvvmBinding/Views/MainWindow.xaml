@@ -10,7 +10,7 @@
         Width="795"
         Height="459"
         WindowStartupLocation="CenterScreen"
-        mc:Ignorable="d">
+        mc:Ignorable="d" xmlns:my="clr-namespace:BTLViewRibbon.UserControls">
     <Window.Resources>
         <viewModels:MainWindowViewModel x:Key="Windows1ViewModel" />
         <converters:IsBiggerThanConverter x:Key="IsBiggerThanConverter" />
@@ -93,5 +93,6 @@
             <Hyperlink NavigateUri="http://visualstudiogallery.msdn.microsoft.com/970005b8-ee15-4295-9960-375e6ea1276c" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="WPF MVVM project template" />
             </Hyperlink><Run Text=")" />
         </TextBlock>
+        <my:SliderTextBoxCustom ValueSlider="{Binding ValueSlider, Mode=TwoWay}" HorizontalAlignment="Left" Margin="404,380,0,0" x:Name="sliderTextBoxCustom1" VerticalAlignment="Top" Height="28" Width="208" />
     </Grid>
 </Window>

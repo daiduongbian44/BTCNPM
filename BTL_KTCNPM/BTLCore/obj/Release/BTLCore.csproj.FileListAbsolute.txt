@@ -5,6 +5,5 @@ C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\BTLCore\obj\Releas
 C:\Users\MNQ\Documents\Visual Studio 2010\Projects\BTL_KTCNPM\BTLCore\obj\Release\BTLCore.pdb
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\bin\Release\BTLCore.dll
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\bin\Release\BTLCore.pdb
-C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\obj\Release\BTLCore.csprojResolveAssemblyReference.cache
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\obj\Release\BTLCore.dll
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\obj\Release\BTLCore.pdb

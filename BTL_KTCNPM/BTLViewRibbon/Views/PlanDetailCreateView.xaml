@@ -96,12 +96,6 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <Grid Grid.Row="1">
-                        <StackPanel Orientation="Vertical">
-                            <Button Content="Up" Margin="10, 2"/>
-                            <Button Content="Down" Margin="10, 2"/>
-                        </StackPanel>
-                    </Grid>
                 </Grid>
             </GroupBox>
         </Grid>

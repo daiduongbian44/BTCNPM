@@ -15,5 +15,16 @@ namespace BTLCore.Managers
         {
             ListTERelationship = new ObservableCollection<TERelationshipEntity>();
         }
+
+        public static TERelationshipEntity FindEntity(ErrorEntity error, TechniqueEntity technique)
+        {
+            var items = ListTERelationship.
+                Where(p => p.Error == error && p.Technique == technique).ToList();
+            if (items.Count() <= 0)
+            {
+                throw new Exception("Can't find this entity");
+            }
+            return items[0];
+        }
     }
 }
