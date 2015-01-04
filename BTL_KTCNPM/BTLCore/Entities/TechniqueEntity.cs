@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 
 namespace BTLCore.Entities {
+
+    [Serializable]
     public class TechniqueEntity : BaseEntity
     {
         private double _uFactor;

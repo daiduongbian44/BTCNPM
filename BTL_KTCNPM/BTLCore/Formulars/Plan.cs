@@ -16,6 +16,8 @@ namespace BTLCore.Formulars
         // labourRate: $/hour.
         public static double LaborRate { get; set; }
 
+        public static double NumberOfErrors { get; set; }
+
         // Get Direct Cost(Dx)
         public static double GetDirectCost()
         {
@@ -30,12 +32,14 @@ namespace BTLCore.Formulars
                 // check all error type
                 foreach (ErrorEntity error in ErrorManager.ListErrors)
                 {
-                    double sumTheta = 1 - TERelationshipManager.FindEntity(error, techniqueX).Function.GetValue(tx);
+                    var test3 = TERelationshipManager.FindEntity(error, techniqueX);
+                    double sumTheta = 1 - test3.Function.GetValue(tx);
                     for (int j = 0; j < i; j++)
                     {
                         TechniqueEntity techniqueY = ListItemPlans[j].Technique;
                         double ty = ListItemPlans[j].TxFactor;
-                        sumTheta *= TERelationshipManager.FindEntity(error, techniqueY).Function.GetValue(ty);
+                        var test = TERelationshipManager.FindEntity(error, techniqueY);
+                        sumTheta *= test.Function.GetValue(ty);
                     }
                     double vx = TERelationshipManager.FindEntity(error, techniqueX).Vx;
                     directCost += sumTheta * vx * error.Count;
@@ -52,12 +56,12 @@ namespace BTLCore.Formulars
             {
                 double pi = error.PiFactor;
                 double vcf = error.VfFactor + error.CfFactor;
-                double sumTheta = 0;
+                double sumTheta = 1;
                 foreach (PlanDetailEntity plan in ListItemPlans)
                 {
                     TechniqueEntity technique = plan.Technique;
                     double tx = plan.TxFactor;
-                    sumTheta += TERelationshipManager.FindEntity(error, technique).Function.GetValue(tx);
+                    sumTheta *= TERelationshipManager.FindEntity(error, technique).Function.GetValue(tx);
                 }
                 futureCost += pi * sumTheta * vcf * error.Count;
             }

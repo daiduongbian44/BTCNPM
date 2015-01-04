@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BTLCore.Formulars;
+using BTLCore.Managers;
 
 namespace BTLCore.Entities {
+
+    [Serializable]
     public class ErrorEntity : BaseEntity
     {
         private double _vfFactor;
@@ -49,6 +53,7 @@ namespace BTLCore.Entities {
             set
             {
                 _percentError = value;
+                Count = (int)(PercentError * Plan.NumberOfErrors) / (ErrorManager.ListErrors.Count * 100);
                 NotifyPropertyChanged("PercentError");
             }
         }

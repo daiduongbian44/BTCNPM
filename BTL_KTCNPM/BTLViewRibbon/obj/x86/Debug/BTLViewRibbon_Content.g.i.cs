@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/exponent.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/exp.png")]
 
 

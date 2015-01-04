@@ -49,6 +49,7 @@
     <Compile Include="Function\LinearFunction.cs" />
     <Compile Include="Interfaces\IFunction.cs" />
     <Compile Include="Managers\ErrorManager.cs" />
+    <Compile Include="Managers\SaveDataManager.cs" />
     <Compile Include="Managers\TechniqueManager.cs" />
     <Compile Include="Managers\TERelationshipManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

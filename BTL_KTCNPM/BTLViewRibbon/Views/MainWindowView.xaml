@@ -194,6 +194,10 @@
                                             <TextBlock Text=". " />
                                             <TextBlock Text="{Binding Name}" />
                                             <TextBlock Text=" (%)" />
+                                            
+                                            <TextBlock Text="____" />
+                                            <TextBlock Text="{Binding Count}"/>
+                                            <TextBlock Text=" Errors"/>
                                         </StackPanel>
                                         <Grid MinWidth="250" Margin="0,5,0,5">
                                             <Slider Height="23" 
@@ -348,7 +352,7 @@
                             </Grid>
                         </GroupBox>
                         <TextBlock Height="20" 
-                                   Margin="6,17,548,511"
+                                   Margin="6,14,548,514"
                                    Text="Distribution of defect types:"
                                    TextWrapping="Wrap" />
                     </Grid>
@@ -391,7 +395,10 @@
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
-                                         Text=""
+                                         IsReadOnly="True"
+                                         Text="{Binding DirectCost,
+                                                        Mode=TwoWay,
+                                                        UpdateSourceTrigger=PropertyChanged}"
                                          TextWrapping="Wrap"
                                          VerticalContentAlignment="Center" />
 
@@ -401,7 +408,10 @@
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
-                                         Text=""
+                                         IsReadOnly="True"
+                                         Text="{Binding FutureCost,
+                                                        Mode=TwoWay,
+                                                        UpdateSourceTrigger=PropertyChanged}"
                                          TextWrapping="Wrap"
                                          VerticalContentAlignment="Center" />
 
@@ -411,7 +421,10 @@
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
-                                         Text=""
+                                         IsReadOnly="True"
+                                         Text="{Binding Revenue,
+                                                        Mode=TwoWay,
+                                                        UpdateSourceTrigger=PropertyChanged}"
                                          TextWrapping="Wrap"
                                          VerticalContentAlignment="Center" />
 
@@ -421,7 +434,10 @@
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
-                                         Text=""
+                                         IsReadOnly="True"
+                                         Text="{Binding TotalCost,
+                                                        Mode=TwoWay,
+                                                        UpdateSourceTrigger=PropertyChanged}"
                                          TextWrapping="Wrap"
                                          VerticalContentAlignment="Center" />
 
@@ -431,7 +447,10 @@
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
-                                         Text=""
+                                         IsReadOnly="True"
+                                         Text="{Binding Profit,
+                                                        Mode=TwoWay,
+                                                        UpdateSourceTrigger=PropertyChanged}"
                                          TextWrapping="Wrap"
                                          VerticalContentAlignment="Center" />
 
@@ -441,7 +460,10 @@
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
-                                         Text=""
+                                         IsReadOnly="True"
+                                         Text="{Binding ROI,
+                                                        Mode=TwoWay,
+                                                        UpdateSourceTrigger=PropertyChanged}"
                                          TextWrapping="Wrap"
                                          VerticalContentAlignment="Center" />
                             </StackPanel>

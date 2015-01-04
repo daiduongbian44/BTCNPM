@@ -67,11 +67,23 @@ namespace BTLCore.Function {
         public LinearFunction(double mF, double bF) {
             BFactor = bF;
             MFactor = mF;
-            ImageFunction = new Uri("pack://application:,,,/Images/Linear.png");
+            ImageFunction = new Uri("pack://application:,,,/Images/linear.png");
         }
 
+        // set up function
         public double GetValue(double variable) {
-            return MFactor * variable + BFactor;
+            if (variable >= 0 && variable <= (-1 / MFactor))
+            {
+                return MFactor * variable + 1;
+            }
+            else if (variable > (-1 / MFactor))
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
         }
 
         public string GetName()

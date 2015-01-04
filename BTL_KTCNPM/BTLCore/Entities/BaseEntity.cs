@@ -6,6 +6,7 @@ using System.ComponentModel;
 
 namespace BTLCore.Entities
 {
+    [Serializable]
     public class BaseEntity : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

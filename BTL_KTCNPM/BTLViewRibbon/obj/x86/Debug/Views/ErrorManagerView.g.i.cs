@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using BTLViewRibbon.Cultures;
 using BTLViewRibbon.ViewModels;
 using BTLViewRibbon.Views;
 using Microsoft.Windows.Controls;

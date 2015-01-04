@@ -61,7 +61,7 @@ namespace BTLViewRibbon.ViewModels
 
         public bool CanEstimateProjectCommand()
         {
-            return true;
+            return Plan.ListItemPlans.Count > 0;
         }
 
         public void ExeEstimateProjectCommand()
@@ -95,7 +95,7 @@ namespace BTLViewRibbon.ViewModels
 
         public bool CanClearCurrentProjectCommand()
         {
-            return true;
+            return Plan.ListItemPlans.Count > 0;
         }
 
         public void ExeClearCurrentProjectCommand()
@@ -331,6 +331,11 @@ namespace BTLViewRibbon.ViewModels
             set
             {
                 _numberOfErrors = value;
+                Plan.NumberOfErrors = value;
+                foreach (var item in ErrorManager.ListErrors)
+                {
+                    item.Count = (int)(Plan.NumberOfErrors * item.PercentError) / (ErrorManager.ListErrors.Count * 100);
+                }
                 NotifyPropertyChanged("NumberOfErrors");
             }
         }

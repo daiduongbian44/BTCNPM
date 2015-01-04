@@ -6,3 +6,4 @@ C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\bin\Debug\BTLCore.dll
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\bin\Debug\BTLCore.pdb
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\obj\Debug\BTLCore.dll
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\obj\Debug\BTLCore.pdb
+C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLCore\obj\Debug\BTLCore.csprojResolveAssemblyReference.cache

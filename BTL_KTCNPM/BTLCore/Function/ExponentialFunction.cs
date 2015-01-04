@@ -11,7 +11,7 @@ namespace BTLCore.Function
     {
         public ExponentialFunction()
         {
-            ImageFunction = new Uri("pack://application:,,,/Images/Exponent.png");
+            ImageFunction = new Uri("pack://application:,,,/Images/exp.png");
         }
 
         private double _lambda;
@@ -55,8 +55,13 @@ namespace BTLCore.Function
             get { return GetName(); }
         }
 
+        // set up function
         public double GetValue(double variable)
         {
+            if (variable >= 0)
+            {
+                return LambdaFactor * Math.Exp(-LambdaFactor * variable);
+            }
             return 1;
         }
 

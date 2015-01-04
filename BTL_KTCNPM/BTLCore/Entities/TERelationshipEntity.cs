@@ -5,6 +5,8 @@ using System.Text;
 using BTLCore.Interfaces;
 
 namespace BTLCore.Entities {
+
+    [Serializable]
     public class TERelationshipEntity : BaseEntity
     {
         private TechniqueEntity _technique;
