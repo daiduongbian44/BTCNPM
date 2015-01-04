@@ -25,8 +25,8 @@
         </Grid.RowDefinitions>
 
         <ribbon:Ribbon x:Name="Ribbon">
-            <ribbon:RibbonTab Header="Home">
-                <ribbon:RibbonGroup Header="Manager">
+            <ribbon:RibbonTab Header="{Binding Path=TabHome, Source={StaticResource Resources}}">
+                <ribbon:RibbonGroup Header="{Binding Path=GroupManager, Source={StaticResource Resources}}">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
                         <ribbon:RibbonGroupSizeDefinition>
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
@@ -37,32 +37,38 @@
                         <ribbon:RibbonGroupSizeDefinition IsCollapsed="True" />
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
                     <ribbon:RibbonButton Command="{Binding ShowErrorManagerCommand}"
-                                         Label="ErrorTypes"
+                                         Label="{Binding Path=ButtonErrorTypes,
+                                                         Source={StaticResource Resources}}"
                                          LargeImageSource="../Images\LargeIcon.png" />
                     <ribbon:RibbonButton Command="{Binding ShowTechniqueManagerCommand}"
-                                         Label="Techniques"
+                                         Label="{Binding Path=ButtonTechniques,
+                                                         Source={StaticResource Resources}}"
                                          LargeImageSource="../Images\LargeIcon.png" />
                     <ribbon:RibbonButton Command="{Binding ShowPlanManagerCommand}"
-                                         Label="NewPlan"
+                                         Label="{Binding Path=ButtonNewPlan,
+                                                         Source={StaticResource Resources}}"
                                          LargeImageSource="../Images\LargeIcon.png" />
 
                     <ribbon:RibbonButton Command="{Binding SaveDataCommand}"
-                                         Label="SaveData"
+                                         Label="{Binding Path=ButtonSaveData,
+                                                         Source={StaticResource Resources}}"
                                          LargeImageSource="../Images\LargeIcon.png" />
                 </ribbon:RibbonGroup>
 
 
 
-                <ribbon:RibbonGroup Header="Estimation">
+                <ribbon:RibbonGroup Header="{Binding Path=GroupEstimation, Source={StaticResource Resources}}">
                     <ribbon:RibbonButton Command="{Binding EstimateProjectCommand}"
-                                         Label="Estimate project"
+                                         Label="{Binding Path=ButtonEstimation,
+                                                         Source={StaticResource Resources}}"
                                          LargeImageSource="../Images\LargeIcon.png" />
                     <ribbon:RibbonButton Command="{Binding ClearCurrentProjectCommand}"
-                                         Label="Clear Current Project"
+                                         Label="{Binding Path=ButtonClearCurrent,
+                                                         Source={StaticResource Resources}}"
                                          LargeImageSource="../Images\LargeIcon.png" />
                 </ribbon:RibbonGroup>
 
-                <ribbon:RibbonGroup Header="Language">
+                <ribbon:RibbonGroup Header="{Binding Path=GroupLanguage, Source={StaticResource Resources}}">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
                         <ribbon:RibbonGroupSizeDefinition>
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
@@ -99,7 +105,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <GroupBox Margin="5, 10" Header="Parameters">
+                <GroupBox Margin="5, 10" Header="{Binding Path=GBParameter, Source={StaticResource Resources}}">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Height="20" 
                                    Margin="10,10,10,0"
@@ -127,7 +133,8 @@
 
                         <TextBlock Height="20" 
                                    Margin="10,10,10,0"
-                                   Text="Number of errors:"
+                                   Text="{Binding Path=NumberOfErrors,
+                                                  Source={StaticResource Resources}}"
                                    TextWrapping="Wrap" />
                         <TextBox Height="26" 
                                  Margin="10,0,10,0"
@@ -140,7 +147,8 @@
 
                         <TextBlock Height="20" 
                                    Margin="10,10,10,0"
-                                   Text="Labor cost:"
+                                   Text="{Binding Path=LaborCost,
+                                                  Source={StaticResource Resources}}"
                                    TextWrapping="Wrap" />
                         <TextBox Height="26" 
                                  Margin="10,0,10,0"
@@ -154,7 +162,7 @@
             </Grid>
 
             <Grid Grid.Column="1">
-                <GroupBox Margin="5, 10" Header="Error Types And Techniques">
+                <GroupBox Margin="5, 10" Header="{Binding Path=GBErrorTypeAndTechnique, Source={StaticResource Resources}}">
                     <Grid>
                         <ListBox Width="250" 
                                  Height="312"
@@ -184,7 +192,8 @@
                                    Margin="0,15,424,0"
                                    HorizontalAlignment="Right"
                                    VerticalAlignment="Top"
-                                   Text="List Error Types" />
+                                   Text="{Binding Path=ListErrorTypes,
+                                                  Source={StaticResource Resources}}" />
                         <ListBox Height="502" 
                                  Margin="6,38,517,0"
                                  VerticalAlignment="Top"
@@ -197,10 +206,10 @@
                                             <TextBlock Text=". " />
                                             <TextBlock Text="{Binding Name}" />
                                             <TextBlock Text=" (%)" />
-                                            
+
                                             <TextBlock Text="____" />
-                                            <TextBlock Text="{Binding Count}"/>
-                                            <TextBlock Text=" Errors"/>
+                                            <TextBlock Text="{Binding Count}" />
+                                            <TextBlock Text=" Errors" />
                                         </StackPanel>
                                         <Grid MinWidth="250" Margin="0,5,0,5">
                                             <Slider Height="23" 
@@ -229,7 +238,8 @@
                                    Margin="0,15,168,0"
                                    HorizontalAlignment="Right"
                                    VerticalAlignment="Top"
-                                   Text="List Techniques" />
+                                   Text="{Binding Path=ListTechniques,
+                                                  Source={StaticResource Resources}}" />
                         <ListBox Width="250" 
                                  Height="312"
                                  Margin="0,38,6,0"
@@ -258,7 +268,8 @@
                                   Margin="0,355,6,3"
                                   HorizontalAlignment="Right"
                                   BorderBrush="LightBlue"
-                                  Header="Information">
+                                  Header="{Binding Path=GBInformation,
+                                                   Source={StaticResource Resources}}">
                             <Grid Background="White">
                                 <TextBlock Width="87" 
                                            Height="22"
@@ -354,9 +365,12 @@
                                                         Mode=TwoWay}" />
                             </Grid>
                         </GroupBox>
-                        <TextBlock Height="20" 
-                                   Margin="6,14,548,514"
-                                   Text="Distribution of defect types:"
+                        <TextBlock Width="228" 
+                                   Height="20"
+                                   Margin="6,14,0,514"
+                                   HorizontalAlignment="Left"
+                                   Text="{Binding Path=DistributionDefect,
+                                                  Source={StaticResource Resources}}"
                                    TextWrapping="Wrap" />
                     </Grid>
 
@@ -370,7 +384,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0">
-                    <GroupBox Header="Plan">
+                    <GroupBox Header="{Binding Path=GBPlan, Source={StaticResource Resources}}">
                         <DataGrid Margin="5" 
                                   AutoGenerateColumns="False"
                                   Background="White"
@@ -389,12 +403,13 @@
 
                 </Grid>
                 <Grid Grid.Row="1">
-                    <GroupBox Header="Result">
+                    <GroupBox Header="{Binding Path=GBResult, Source={StaticResource Resources}}">
                         <Grid>
                             <StackPanel>
                                 <TextBlock Height="20" 
                                            Margin="10,10,10,0"
-                                           Text="Direct cost:"
+                                           Text="{Binding Path=DirectCost,
+                                                          Source={StaticResource Resources}}"
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
@@ -407,7 +422,8 @@
 
                                 <TextBlock Height="20" 
                                            Margin="10,10,10,0"
-                                           Text="Future cost:"
+                                           Text="{Binding Path=FutureCost,
+                                                          Source={StaticResource Resources}}"
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
@@ -420,7 +436,8 @@
 
                                 <TextBlock Height="20" 
                                            Margin="10,10,10,0"
-                                           Text="Revenue:"
+                                           Text="{Binding Path=Revenue,
+                                                          Source={StaticResource Resources}}"
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
@@ -433,7 +450,8 @@
 
                                 <TextBlock Height="20" 
                                            Margin="10,10,10,0"
-                                           Text="Total cost:"
+                                           Text="{Binding Path=TotalCost,
+                                                          Source={StaticResource Resources}}"
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
@@ -446,7 +464,8 @@
 
                                 <TextBlock Height="20" 
                                            Margin="10,10,10,0"
-                                           Text="Profit:"
+                                           Text="{Binding Path=Profit,
+                                                          Source={StaticResource Resources}}"
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"
@@ -459,7 +478,8 @@
 
                                 <TextBlock Height="20" 
                                            Margin="10,10,10,0"
-                                           Text="ROI:"
+                                           Text="{Binding Path=ROI,
+                                                          Source={StaticResource Resources}}"
                                            TextWrapping="Wrap" />
                                 <TextBox Height="26" 
                                          Margin="10,0,10,0"

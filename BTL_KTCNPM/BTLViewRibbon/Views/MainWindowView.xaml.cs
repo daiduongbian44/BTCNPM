@@ -17,6 +17,7 @@ using System.Threading;
 using BTLViewRibbon.Cultures;
 using System.Globalization;
 using System.Diagnostics;
+using BTLViewRibbon;
 
 namespace BTLViewRibbon.Views
 {
@@ -45,7 +46,7 @@ namespace BTLViewRibbon.Views
         {
             CultureInfo selected_culture = cbLanguages.SelectedItem as CultureInfo;
             if (Properties.Resources.Culture != null && !Properties.Resources.Culture.Equals(selected_culture))
-            { 
+            {
                 CultureResources.ChangeCulture(selected_culture);
             }
         }

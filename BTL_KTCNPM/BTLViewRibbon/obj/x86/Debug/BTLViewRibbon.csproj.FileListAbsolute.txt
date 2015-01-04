@@ -69,9 +69,6 @@ C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\App.
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon_MarkupCompile.cache
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon_MarkupCompile.lref
-C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon.Cultures.Resources.resources
-C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon.Cultures.Resources.en-US.resources
-C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon.Cultures.Resources.vi.resources
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon.csproj.GenerateResource.Cache
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\Views\MainWindowView.baml
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\ResourceDictionaries\Languages.baml
@@ -80,3 +77,6 @@ C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\View
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon.g.vi.resources
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\en-US\BTLViewRibbon.resources.dll
 C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\vi\BTLViewRibbon.resources.dll
+C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon.Properties.Resources.resources
+C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon.Properties.Resources.en-US.resources
+C:\Users\MNQ\Documents\GitHub\BTCNPM\BTL_KTCNPM\BTLViewRibbon\obj\x86\Debug\BTLViewRibbon.Properties.Resources.vi.resources

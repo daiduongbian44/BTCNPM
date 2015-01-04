@@ -117,7 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ButtonClearCurrent" xml:space="preserve">
+    <value>Xóa project hiện tại</value>
+  </data>
+  <data name="ButtonErrorTypes" xml:space="preserve">
+    <value>Loại lỗi</value>
+  </data>
+  <data name="ButtonEstimation" xml:space="preserve">
+    <value>Ước tính lỗi</value>
+  </data>
+  <data name="ButtonNewPlan" xml:space="preserve">
+    <value>Kế hoạch</value>
+  </data>
+  <data name="ButtonSaveData" xml:space="preserve">
+    <value>Lưu dữ liệu</value>
+  </data>
+  <data name="ButtonTechniques" xml:space="preserve">
+    <value>Kỹ thuật</value>
+  </data>
+  <data name="DirectCost" xml:space="preserve">
+    <value>Giá trực tiếp:</value>
+  </data>
+  <data name="DistributionDefect" xml:space="preserve">
+    <value>Sự phân bố của các loại lỗi:</value>
+  </data>
+  <data name="FutureCost" xml:space="preserve">
+    <value>Giá tương lai:</value>
+  </data>
+  <data name="GBErrorTypeAndTechnique" xml:space="preserve">
+    <value>Loại lỗi và kỹ thuật</value>
+  </data>
+  <data name="GBInformation" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="GBParameter" xml:space="preserve">
+    <value>Tham số</value>
+  </data>
+  <data name="GBPlan" xml:space="preserve">
+    <value>Kế hoạch</value>
+  </data>
+  <data name="GBResult" xml:space="preserve">
+    <value>Kết quả</value>
+  </data>
+  <data name="GroupEstimation" xml:space="preserve">
+    <value>Ước lượng</value>
+  </data>
+  <data name="GroupLanguage" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="GroupManager" xml:space="preserve">
+    <value>Quản lý</value>
+  </data>
+  <data name="LaborCost" xml:space="preserve">
+    <value>Giá nhân công:</value>
+  </data>
+  <data name="ListErrorTypes" xml:space="preserve">
+    <value>Danh sách các loại lỗi</value>
+  </data>
+  <data name="ListTechniques" xml:space="preserve">
+    <value>Danh sách kỹ thuật</value>
+  </data>
+  <data name="NumberOfErrors" xml:space="preserve">
+    <value>Số các lỗi:</value>
+  </data>
+  <data name="Profit" xml:space="preserve">
+    <value>Lãi:</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Lợi nhuận:</value>
+  </data>
+  <data name="ROI" xml:space="preserve">
+    <value>ROI:</value>
+  </data>
+  <data name="TabHome" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
   <data name="TitleMainWindow" xml:space="preserve">
-    <value>Software Engineering Economics Project</value>
+    <value>Bài tập lớn kinh tế công nghệ phần mềm</value>
+  </data>
+  <data name="TotalCost" xml:space="preserve">
+    <value>Tổng giá:</value>
   </data>
 </root>

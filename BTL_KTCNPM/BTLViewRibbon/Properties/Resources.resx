@@ -117,7 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ButtonClearCurrent" xml:space="preserve">
+    <value>Clear current project</value>
+  </data>
+  <data name="ButtonErrorTypes" xml:space="preserve">
+    <value>ErrorTypes</value>
+  </data>
+  <data name="ButtonEstimation" xml:space="preserve">
+    <value>Estimate project</value>
+  </data>
+  <data name="ButtonNewPlan" xml:space="preserve">
+    <value>NewPlan</value>
+  </data>
+  <data name="ButtonSaveData" xml:space="preserve">
+    <value>SaveData</value>
+  </data>
+  <data name="ButtonTechniques" xml:space="preserve">
+    <value>Techniques</value>
+  </data>
+  <data name="DirectCost" xml:space="preserve">
+    <value>Direct cost:</value>
+  </data>
+  <data name="DistributionDefect" xml:space="preserve">
+    <value>Distribution of defect types:</value>
+  </data>
+  <data name="FutureCost" xml:space="preserve">
+    <value>Future cost:</value>
+  </data>
+  <data name="GBErrorTypeAndTechnique" xml:space="preserve">
+    <value>Error types and Techniques</value>
+  </data>
+  <data name="GBInformation" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="GBParameter" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="GBPlan" xml:space="preserve">
+    <value>Plan</value>
+  </data>
+  <data name="GBResult" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="GroupEstimation" xml:space="preserve">
+    <value>Estimation</value>
+  </data>
+  <data name="GroupLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="GroupManager" xml:space="preserve">
+    <value>Manager</value>
+  </data>
+  <data name="LaborCost" xml:space="preserve">
+    <value>Labor cost:</value>
+  </data>
+  <data name="ListErrorTypes" xml:space="preserve">
+    <value>List Error Types</value>
+  </data>
+  <data name="ListTechniques" xml:space="preserve">
+    <value>List Techniques</value>
+  </data>
+  <data name="NumberOfErrors" xml:space="preserve">
+    <value>Number of errors:</value>
+  </data>
+  <data name="Profit" xml:space="preserve">
+    <value>Profit:</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Revenue:</value>
+  </data>
+  <data name="ROI" xml:space="preserve">
+    <value>ROI:</value>
+  </data>
+  <data name="TabHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="TitleMainWindow" xml:space="preserve">
     <value>BTL_KTCNPM</value>
+  </data>
+  <data name="TotalCost" xml:space="preserve">
+    <value>Total cost:</value>
   </data>
 </root>
