@@ -21,7 +21,6 @@ namespace BTLCore.Entities {
         {
             STT = Counter;
             Counter++;
-            PercentError = 10;
         }
 
         public string Name

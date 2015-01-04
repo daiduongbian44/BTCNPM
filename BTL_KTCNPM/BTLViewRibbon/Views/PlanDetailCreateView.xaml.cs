@@ -10,13 +10,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Windows.Controls.Ribbon;
 
 namespace BTLViewRibbon.Views
 {
     /// <summary>
     /// Interaction logic for PlanDetailCreate.xaml
     /// </summary>
-    public partial class PlanDetailCreateView : Window
+    public partial class PlanDetailCreateView : RibbonWindow
     {
         public PlanDetailCreateView()
         {

@@ -45,7 +45,16 @@
                     <ribbon:RibbonButton Command="{Binding ShowPlanManagerCommand}"
                                          Label="New Plan"
                                          LargeImageSource="../Images\LargeIcon.png" />
-                    <ribbon:RibbonButton Command="{Binding}"
+
+                </ribbon:RibbonGroup>
+
+
+
+                <ribbon:RibbonGroup Header="Estimation">
+                    <ribbon:RibbonButton Command="{Binding EstimateProjectCommand}"
+                                         Label="Estimate project"
+                                         LargeImageSource="../Images\LargeIcon.png" />
+                    <ribbon:RibbonButton Command="{Binding ClearCurrentProjectCommand}"
                                          Label="Clear Current Project"
                                          LargeImageSource="../Images\LargeIcon.png" />
                 </ribbon:RibbonGroup>
@@ -162,7 +171,7 @@
                             </ListBox.ItemTemplate>
 
                             <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectionChanged">
+                                <i:EventTrigger EventName="PreviewMouseDown">
                                     <i:InvokeCommandAction Command="{Binding SelectionErrorChangeCommand}" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}}" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
@@ -201,7 +210,7 @@
                                                      Height="23"
                                                      Margin="0,0,0,0"
                                                      HorizontalAlignment="Right"
-                                                     IsEnabled="False"
+                                                     IsReadOnly="True"
                                                      Text="{Binding PercentError}" />
                                         </Grid>
                                     </StackPanel>
@@ -232,7 +241,7 @@
                             </ListBox.ItemTemplate>
 
                             <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectionChanged">
+                                <i:EventTrigger EventName="PreviewMouseDown">
                                     <i:InvokeCommandAction Command="{Binding SelectionTechniqueChangeCommand}" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBox}}" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
@@ -255,49 +264,87 @@
                                          Margin="99,12,0,0"
                                          HorizontalAlignment="Left"
                                          VerticalAlignment="Top"
-                                         Text="{Binding Path=ErrorEntitySelected.Name,
-                                                        UpdateSourceTrigger=PropertyChanged}" />
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=TERelationshipEntitySelected.Error.Name,
+                                                        UpdateSourceTrigger=PropertyChanged,
+                                                        Mode=TwoWay}" />
                                 <TextBlock Width="87" 
                                            Height="22"
-                                           Margin="23,46,0,0"
+                                           Margin="23,48,0,0"
                                            HorizontalAlignment="Left"
                                            VerticalAlignment="Top"
                                            Text="Technique" />
                                 <TextBox Width="206" 
                                          Height="26"
-                                         Margin="99,44,0,0"
+                                         Margin="99,46,0,0"
                                          HorizontalAlignment="Left"
                                          VerticalAlignment="Top"
-                                         Text="{Binding TechniqueEntitySelected.Name,
-                                                        UpdateSourceTrigger=PropertyChanged}" />
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=TERelationshipEntitySelected.Technique.Name,
+                                                        UpdateSourceTrigger=PropertyChanged,
+                                                        Mode=TwoWay}" />
                                 <TextBlock Width="87" 
                                            Height="22"
-                                           Margin="23,77,0,0"
+                                           Margin="23,84,0,0"
                                            HorizontalAlignment="Left"
                                            VerticalAlignment="Top"
                                            Text="Function" />
 
-                                <TextBlock Width="87" 
+                                <TextBlock Width="50" 
                                            Height="22"
-                                           Margin="23,108,0,0"
+                                           Margin="185,118,0,0"
                                            HorizontalAlignment="Left"
                                            VerticalAlignment="Top"
-                                           Text="Function" />
-                                <TextBox Width="206" 
+                                           Text="Param" />
+                                <TextBox Width="65" 
                                          Height="26"
-                                         Margin="0,106,188,0"
-                                         HorizontalAlignment="Right"
-                                         VerticalAlignment="Top" />
+                                         Margin="240,116,0,0"
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Top"
+                                         Text="{Binding Path=TERelationshipEntitySelected.Function.ParamFactor,
+                                                        UpdateSourceTrigger=PropertyChanged,
+                                                        Mode=TwoWay}" />
 
                                 <ComboBox Width="206" 
                                           Height="26"
-                                          Margin="99,74,0,0"
+                                          Margin="99,81,0,0"
                                           HorizontalAlignment="Left"
                                           VerticalAlignment="Top"
                                           DisplayMemberPath="Name"
                                           ItemsSource="{Binding ListFunctions}"
-                                          SelectedValuePath="Name"
-                                          />
+                                          SelectedValue="{Binding Path=TERelationshipEntitySelected.Function.Name,
+                                                                  UpdateSourceTrigger=PropertyChanged,
+                                                                  Mode=OneWay}"
+                                          SelectedValuePath="Name">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding ComboboxFunctionSelectionChangeCommand}" CommandParameter="{Binding Path=SelectedValue, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ComboBox}}" />
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <Image Width="176" 
+                                       Height="98"
+                                       Margin="311,68,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Source="{Binding Path=TERelationshipEntitySelected.Function.ImageFunction,
+                                                        UpdateSourceTrigger=PropertyChanged,
+                                                        Mode=OneWay}"
+                                       Stretch="Uniform" />
+                                <TextBlock Width="58" 
+                                           Height="22"
+                                           Margin="23,118,0,0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top"
+                                           Text="Vx" />
+                                <TextBox Width="61" 
+                                         Height="26"
+                                         Margin="99,116,0,0"
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Top"
+                                         Text="{Binding Path=TERelationshipEntitySelected.Vx,
+                                                        UpdateSourceTrigger=PropertyChanged,
+                                                        Mode=TwoWay}" />
                             </Grid>
                         </GroupBox>
                         <TextBlock Height="20" 
@@ -317,9 +364,18 @@
 
                 <Grid Grid.Row="0">
                     <GroupBox Header="Plan">
-                        <DataGrid Margin="5" AutoGenerateColumns="False">
+                        <DataGrid Margin="5" 
+                                  AutoGenerateColumns="False"
+                                  Background="White"
+                                  IsReadOnly="True"
+                                  ItemsSource="{Binding ListItemPlans}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="*" Header="Technique" />
+                                <DataGridTextColumn Width="2*" 
+                                                    Binding="{Binding Path=Technique.Name}"
+                                                    Header="Technique" />
+                                <DataGridTextColumn Width="*" 
+                                                    Binding="{Binding TxFactor}"
+                                                    Header="Tx" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>

@@ -22,14 +22,6 @@
         </Grid.RowDefinitions>
 
         <ribbon:Ribbon x:Name="Ribbon" Grid.Row="0">
-            <ribbon:Ribbon.ApplicationMenu>
-                <ribbon:RibbonApplicationMenu SmallImageSource="..\Images\SmallIcon.png">
-                    <ribbon:RibbonApplicationMenuItem x:Name="MenuItem1" 
-                                                      Header="Hello _Ribbon"
-                                                      ImageSource="..\Images\LargeIcon.png" />
-                </ribbon:RibbonApplicationMenu>
-            </ribbon:Ribbon.ApplicationMenu>
-
             <ribbon:RibbonTab Header="Home">
                 <ribbon:RibbonGroup Header="Manager">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>

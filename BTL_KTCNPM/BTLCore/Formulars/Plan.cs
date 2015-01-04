@@ -11,21 +11,21 @@ namespace BTLCore.Formulars
 {
     public class Plan
     {
-        public ObservableCollection<PlanDetailEntity> ListItemPlan;
+        public static ObservableCollection<PlanDetailEntity> ListItemPlans = new ObservableCollection<PlanDetailEntity>();
 
         // labourRate: $/hour.
-        public double labourRate = 3;
+        public static double LaborRate { get; set; }
 
         // Get Direct Cost(Dx)
-        public double GetDirectCost()
+        public static double GetDirectCost()
         {
             double directCost = 0;
-            for (int i = 0; i < ListItemPlan.Count; i++)
+            for (int i = 0; i < ListItemPlans.Count; i++)
             {
-                TechniqueEntity techniqueX = ListItemPlan[i].Technique;
-                double tx = ListItemPlan[i].TxFactor;
-                directCost += ListItemPlan[i].Technique.UFactor;
-                directCost += tx * labourRate;
+                TechniqueEntity techniqueX = ListItemPlans[i].Technique;
+                double tx = ListItemPlans[i].TxFactor;
+                directCost += ListItemPlans[i].Technique.UFactor;
+                directCost += tx * LaborRate;
 
                 // check all error type
                 foreach (ErrorEntity error in ErrorManager.ListErrors)
@@ -33,8 +33,8 @@ namespace BTLCore.Formulars
                     double sumTheta = 1 - TERelationshipManager.FindEntity(error, techniqueX).Function.GetValue(tx);
                     for (int j = 0; j < i; j++)
                     {
-                        TechniqueEntity techniqueY = ListItemPlan[j].Technique;
-                        double ty = ListItemPlan[j].TxFactor;
+                        TechniqueEntity techniqueY = ListItemPlans[j].Technique;
+                        double ty = ListItemPlans[j].TxFactor;
                         sumTheta *= TERelationshipManager.FindEntity(error, techniqueY).Function.GetValue(ty);
                     }
                     double vx = TERelationshipManager.FindEntity(error, techniqueX).Vx;
@@ -45,7 +45,7 @@ namespace BTLCore.Formulars
         }
 
         // get Future Cost (Df)
-        public double GetFutureCost()
+        public static double GetFutureCost()
         {
             double futureCost = 0;
             foreach (ErrorEntity error in ErrorManager.ListErrors)
@@ -53,7 +53,7 @@ namespace BTLCore.Formulars
                 double pi = error.PiFactor;
                 double vcf = error.VfFactor + error.CfFactor;
                 double sumTheta = 0;
-                foreach (PlanDetailEntity plan in ListItemPlan)
+                foreach (PlanDetailEntity plan in ListItemPlans)
                 {
                     TechniqueEntity technique = plan.Technique;
                     double tx = plan.TxFactor;
@@ -65,13 +65,13 @@ namespace BTLCore.Formulars
         }
 
         // get Benefit (Revenue)
-        public double GetBenefit()
+        public static double GetBenefit()
         {
             double benefit = 0;
-            for (int i = 0; i < ListItemPlan.Count; i++)
+            for (int i = 0; i < ListItemPlans.Count; i++)
             {
-                TechniqueEntity techniqueX = ListItemPlan[i].Technique;
-                double tx = ListItemPlan[i].TxFactor;
+                TechniqueEntity techniqueX = ListItemPlans[i].Technique;
+                double tx = ListItemPlans[i].TxFactor;
 
                 // check all error type
                 foreach (ErrorEntity error in ErrorManager.ListErrors)
@@ -80,8 +80,8 @@ namespace BTLCore.Formulars
                     double tmp1 = 1 - TERelationshipManager.FindEntity(error, techniqueX).Function.GetValue(tx);
                     for (int j = 0; j < i; j++)
                     {
-                        TechniqueEntity techniqueY = ListItemPlan[j].Technique;
-                        double ty = ListItemPlan[j].TxFactor;
+                        TechniqueEntity techniqueY = ListItemPlans[j].Technique;
+                        double ty = ListItemPlans[j].TxFactor;
                         tmp1 *= TERelationshipManager.FindEntity(error, techniqueY).Function.GetValue(ty);
                     }
                     double vcf = error.VfFactor + error.CfFactor;
@@ -89,6 +89,21 @@ namespace BTLCore.Formulars
                 }
             }
             return benefit;
+        }
+
+        public static double GetTotalCost()
+        {
+            return GetDirectCost() + GetFutureCost();
+        }
+
+        public static double GetProfit()
+        {
+            return GetBenefit() - GetTotalCost();
+        }
+
+        public static double GetRoi()
+        {
+            return GetProfit() / GetTotalCost();
         }
     }
 }

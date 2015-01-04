@@ -9,6 +9,7 @@ using BTLViewRibbon.Helpers;
 using BTLCore.Entities;
 using BTLCore.Managers;
 using System.Windows.Input;
+using BTLCore.Function;
 
 namespace BTLViewRibbon.ViewModels
 {
@@ -236,9 +237,9 @@ namespace BTLViewRibbon.ViewModels
             }
 
             // check name
-            var item = ListErrors.Where(p => p.Name.ToLower().
+            var items = ListErrors.Where(p => p.Name.ToLower().
                 Equals(TextNewName.Trim().ToLower())).ToList();
-            if (item.Count > 0)
+            if (items.Count > 0)
             {
                 MessageBox.Show("Tên đã được sử dụng, vui lòng dùng tên khác!", "Thông báo",
                     MessageBoxButton.OK, MessageBoxImage.Error);
@@ -267,6 +268,23 @@ namespace BTLViewRibbon.ViewModels
             entity.PiFactor = pi;
 
             ListErrors.Add(entity);
+
+            // create relationship with all other techniques
+            foreach (var item in TechniqueManager.ListTechniques)
+            {
+                TERelationshipManager.ListTERelationship.Add(new TERelationshipEntity()
+                {
+                    Error = entity,
+                    Technique = item,
+                    Vx = 0,
+                    Function = new LinearFunction(1)
+                });
+            }
+
+            TextNewCf = "";
+            TextNewName = "";
+            TextNewPi = "";
+            TextNewVf = "";
 
             IsGridBoxNewEnable = false;
             IsGridBoxEnable = true;
@@ -382,6 +400,15 @@ namespace BTLViewRibbon.ViewModels
 
         public void ExeDeleteCommand()
         {
+            
+            var items = TERelationshipManager.ListTERelationship
+                .Where(p => p.Error == ErrorEntitySelected).ToList();
+            for (int i = items.Count() - 1; i >= 0; --i )
+            {
+                var item = items[i];
+                TERelationshipManager.ListTERelationship.Remove(item);
+            }
+
             ListErrors.Remove(ErrorEntitySelected);
             ErrorEntitySelected = null;
         }

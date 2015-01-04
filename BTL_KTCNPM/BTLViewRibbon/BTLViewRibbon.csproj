@@ -68,8 +68,6 @@
     <Compile Include="Cultures\CultureResources.cs" />
     <Compile Include="Helpers\DelegateCommand.cs" />
     <Compile Include="Helpers\PrimativeCommand.cs" />
-    <Compile Include="Models\ISelectable.cs" />
-    <Compile Include="Models\SelectionService.cs" />
     <Compile Include="Cultures\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -176,6 +174,10 @@
       <Project>{B9D33154-43B9-4637-BBAC-218F3BE12858}</Project>
       <Name>BTLCore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Exponent.png" />
+    <Resource Include="Images\Linear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

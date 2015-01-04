@@ -9,6 +9,7 @@ using BTLCore.Entities;
 using BTLCore.Managers;
 using System.Windows;
 using System.Windows.Input;
+using BTLCore.Function;
 
 namespace BTLViewRibbon.ViewModels
 {
@@ -241,6 +242,14 @@ namespace BTLViewRibbon.ViewModels
 
         public void ExeDeleteCommand()
         {
+            var items = TERelationshipManager.ListTERelationship
+                .Where(p => p.Technique == TechniqueEntitySelected).ToList();
+            for (int i = items.Count - 1; i >= 0; --i)
+            {
+                var item = items[i];
+                TERelationshipManager.ListTERelationship.Remove(item);
+            }
+
             ListTechniques.Remove(TechniqueEntitySelected);
             TechniqueEntitySelected = null;
         }
@@ -263,9 +272,9 @@ namespace BTLViewRibbon.ViewModels
             }
 
             // check name
-            var item = ListTechniques.Where(p => p.Name.ToLower().
+            var items = ListTechniques.Where(p => p.Name.ToLower().
                 Equals(TextNewName.Trim().ToLower())).ToList();
-            if (item.Count > 0)
+            if (items.Count > 0)
             {
                 MessageBox.Show("Tên đã được sử dụng, vui lòng dùng tên khác!", "Thông báo",
                     MessageBoxButton.OK, MessageBoxImage.Error);
@@ -289,6 +298,21 @@ namespace BTLViewRibbon.ViewModels
             entity.Name = TextNewName.Trim();
             entity.UFactor = ux;
             ListTechniques.Add(entity);
+
+            // create relationship with all other errors
+            foreach (var item in ErrorManager.ListErrors)
+            {
+                TERelationshipManager.ListTERelationship.Add(new TERelationshipEntity()
+                {
+                    Error = item,
+                    Function = new LinearFunction(1),
+                    Technique = entity,
+                    Vx = 0
+                });
+            }
+
+            TextNewName = "";
+            TextNewUx = "";
 
             IsGridBoxNewEnable = false;
             IsGridBoxEnable = true;

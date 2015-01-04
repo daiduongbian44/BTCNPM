@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTLCore", "BTLCore\BTLCore.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTLViewRibbon", "BTLViewRibbon\BTLViewRibbon.csproj", "{3B7A627D-267C-4D74-BC25-8F14E45FD016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMvvmBinding", "TestMvvmBinding\TestMvvmBinding.csproj", "{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,16 +35,6 @@ Global
 		{3B7A627D-267C-4D74-BC25-8F14E45FD016}.Release|Mixed Platforms.Build.0 = Release|x86
 		{3B7A627D-267C-4D74-BC25-8F14E45FD016}.Release|x86.ActiveCfg = Release|x86
 		{3B7A627D-267C-4D74-BC25-8F14E45FD016}.Release|x86.Build.0 = Release|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Debug|x86.ActiveCfg = Debug|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Debug|x86.Build.0 = Debug|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Release|Any CPU.ActiveCfg = Release|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Release|Mixed Platforms.Build.0 = Release|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Release|x86.ActiveCfg = Release|x86
-		{87D80D6B-2D9D-42FB-996A-172F4F86A8F8}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
