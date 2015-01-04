@@ -7,6 +7,8 @@ using System.ComponentModel;
 
 namespace BTLCore.Function
 {
+
+    [Serializable]
     public class ExponentialFunction : IFunction, INotifyPropertyChanged
     {
         public ExponentialFunction()
@@ -70,6 +72,7 @@ namespace BTLCore.Function
             return "Exponential function";
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propertyName)
         {

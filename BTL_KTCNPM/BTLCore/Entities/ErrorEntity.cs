@@ -17,14 +17,11 @@ namespace BTLCore.Entities {
         private int _count;
         private double _percentError;
 
-        private static int Counter = 1;
-
         public int STT { get; set; }
 
         public ErrorEntity()
         {
-            STT = Counter;
-            Counter++;
+            STT = ErrorManager.ListErrors.Count + 1;
         }
 
         public string Name

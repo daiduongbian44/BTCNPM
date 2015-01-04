@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BTLCore.Managers;
 
 namespace BTLCore.Entities {
 
@@ -11,14 +12,11 @@ namespace BTLCore.Entities {
         private double _uFactor;
         private string _name;
 
-        private static int _counter = 1;
-
         public int STT { get; set; }
 
         public TechniqueEntity()
         {
-            STT = _counter;
-            _counter++;
+            STT = TechniqueManager.ListTechniques.Count + 1;
         }
 
         public string Name

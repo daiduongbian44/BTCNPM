@@ -13,11 +13,14 @@ using BTLCore.Interfaces;
 using BTLCore.Function;
 using System.Windows;
 using BTLCore.Formulars;
+using System.IO;
 
 namespace BTLViewRibbon.ViewModels
 {
     public class MainWindowViewModel : BaseViewModel
     {
+        public string PathSaveFile = "Data.dat";
+
         #region ShowErrorManagerCommand
         public bool CanShowErrorManagerCommand()
         {
@@ -28,6 +31,18 @@ namespace BTLViewRibbon.ViewModels
         {
             ErrorManagerView view = new ErrorManagerView();
             view.ShowDialog();
+        }
+        #endregion
+
+        #region SaveDataCommand
+        public bool CanSaveDataCommand()
+        {
+            return true;
+        }
+
+        public void ExeSaveDataCommand()
+        {
+            SaveDataManager.SaveData(PathSaveFile);
         }
         #endregion
 
@@ -175,6 +190,14 @@ namespace BTLViewRibbon.ViewModels
             }
         }
 
+        public ICommand SaveDataCommand
+        {
+            get
+            {
+                return new DelegateCommand(ExeSaveDataCommand, CanSaveDataCommand);
+            }
+        }
+
         #endregion
 
         public ObservableCollection<ErrorEntity> ListErrors
@@ -255,6 +278,13 @@ namespace BTLViewRibbon.ViewModels
 
         public MainWindowViewModel()
         {
+            // check existing data
+            FileInfo file = new FileInfo(PathSaveFile);
+            if (file.Exists)
+            {
+                SaveDataManager.ReadData(PathSaveFile);
+            }
+
             ListFunctions = new ObservableCollection<IFunction>
                 (new IFunction[] { new LinearFunction(0), new ExponentialFunction() });
         }

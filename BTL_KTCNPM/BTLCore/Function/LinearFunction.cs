@@ -11,6 +11,7 @@ namespace BTLCore.Function {
     /// <summary>
     /// mx + b
     /// </summary>
+    [Serializable]
     public class LinearFunction : IFunction, INotifyPropertyChanged {
         private double _bFactor;
         private double _mFactor;
@@ -91,6 +92,7 @@ namespace BTLCore.Function {
             return "Linear function";
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propertyName)
         {
