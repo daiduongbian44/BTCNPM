@@ -72,7 +72,12 @@ namespace BTLCore.Function {
         }
 
         // set up function
-        public double GetValue(double variable) {
+        public double GetValue(double variable)
+        {
+            if (-0.00001 < MFactor && MFactor < 0.00001)
+            {
+                return 1;
+            }
             if (variable >= 0 && variable <= (-1 / MFactor))
             {
                 return MFactor * variable + 1;

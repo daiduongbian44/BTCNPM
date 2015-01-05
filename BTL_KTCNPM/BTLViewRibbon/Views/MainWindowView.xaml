@@ -138,7 +138,7 @@
                                    TextWrapping="Wrap" />
                         <TextBox Height="26" 
                                  Margin="10,0,10,0"
-                                 IsEnabled="False"
+                                 IsReadOnly="True"
                                  Text="{Binding NumberOfErrors,
                                                 Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"
